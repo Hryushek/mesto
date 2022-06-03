@@ -1,0 +1,14 @@
+.popup-form__input {
+    border: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    width: 100%;
+    padding-bottom: 13px;
+    height: 14px;
+}
+
+.popup-form__input:last-child {
+    padding-top: 30px;
+}

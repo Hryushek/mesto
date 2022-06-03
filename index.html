@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>Mesto</title>
+    <link rel="stylesheet" type="text/css" href="./pages/index.css">
+</head>
+
+<body class="page">
+    <header class="header">
+        <img src="./images/logo.svg" alt="mesto russia" class="header__logo">
+    </header>
+
+    <section class="profile">
+        <img src="./images/Avatar.jpg" alt="аватар" class="profile__avatar">
+        <div class="profile__info">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button class="profile__edit-button" type="button"></button>
+            <p class="profile__description">Исследователь океана</p>
+        </div>
+        <button class="profile__add-button" type="button"></button>
+    </section>
+
+    <section class="elements">
+        <ul class="elements__item">
+            <li class="card">
+                <img src="./images/karachaevsk.jpg" alt="фотография Карачаевска" class="card__photo">
+                <div class="card__description">
+                    <h2 class="card__name">Карачаевск</h2>
+                    <button class="card__like-button" type="button"></button>
+                </div>
+            </li>
+            <li class="card">
+                <img src="./images/elbrus.jpg" alt="фотография Эльбруса" class="card__photo">
+                <div class="card__description">
+                    <h2 class="card__name">Гора Эльбрус</h2>
+                    <button class="card__like-button" type="button"></button>
+                </div>
+            </li>
+            <li class="card">
+                <img src="./images/dombay.jpg" alt="фотография Домбая" class="card__photo">
+                <div class="card__description">
+                    <h2 class="card__name">Домбай</h2>
+                    <button class="card__like-button" type="button"></button>
+                </div>
+            </li>
+            <li class="card">
+                <img src="./images/elbrus.jpg" alt="фотография Эльбруса" class="card__photo">
+                <div class="card__description">
+                    <h2 class="card__name">Гора Эльбрус</h2>
+                    <button class="card__like-button" type="button"></button>
+                </div>
+            </li>
+            <li class="card">
+                <img src="./images/dombay.jpg" alt="фотография Домбая" class="card__photo">
+                <div class="card__description">
+                    <h2 class="card__name">Домбай</h2>
+                    <button class="card__like-button" type="button"></button>
+                </div>
+            </li>
+            <li class="card">
+                <img src="./images/karachaevsk.jpg" alt="фотография Карачаевска" class="card__photo">
+                <div class="card__description">
+                    <h2 class="card__name">Карачаевск</h2>
+                    <button class="card__like-button" type="button"></button>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <footer class="footer">
+        <h3 class="footer__copyright">&copy; 2020 Mesto Russia</h3>
+    </footer>
+    
+    <div class="popup-form">
+        <div class="popup-form__container">
+            <button class="popup-form__close-button" type="button"></button>
+            <form class="popup-form__form">
+                <h3 class="popup-form__text">Редактировать профиль</h3>
+                <fieldset class="popup-form__info">
+                    <input type="text" class="popup-form__input" placeholder="Ваше имя" value="Жак-Ив Кусто" id="name" name="name" />
+                    <input type="text" class="popup-form__input" placeholder="О Вас" value="Исследователь океана" id="job" name="bio" />
+                </fieldset>
+                <button class="popup-form__save-button" type="button">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="./index.js"></script>
+
+</body>
+
+

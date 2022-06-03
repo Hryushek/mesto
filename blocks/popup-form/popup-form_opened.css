@@ -1,0 +1,4 @@
+.popup-form_opened {
+    visibility: visible;
+    display: block;
+}
