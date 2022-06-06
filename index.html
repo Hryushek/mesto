@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8"> 
     <title>Место</title>
     <link rel="stylesheet" type="text/css" href="./pages/index.css">
 </head>
@@ -11,6 +11,7 @@
         <img src="./images/logo.svg" alt="логотип Место Россия" class="header__logo">
     </header>
 
+    <main>
     <section class="profile">
         <img src="./images/Avatar.jpg" alt="аватар" class="profile__avatar">
         <div class="profile__info">
@@ -69,24 +70,26 @@
     </section>
 
     <footer class="footer">
-        <h3 class="footer__copyright">&copy; 2020 Mesto Russia</h3>
+        <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
+
+    </main>
     
-    <div class="popup-form">
-        <div class="popup-form__container">
-            <button class="popup-form__close-button" type="button"></button>
-            <form class="popup-form__form">
-                <h3 class="popup-form__text">Редактировать профиль</h3>
-                <fieldset class="popup-form__info">
-                    <input type="text" class="popup-form__input" placeholder="Ваше имя" value="Жак-Ив Кусто" id="name" name="name" />
-                    <input type="text" class="popup-form__input" placeholder="О Вас" value="Исследователь океана" id="job" name="bio" />
+    <div class="popup">
+        <div class="popup__container">
+            <button class="popup__close-button" type="button"></button>
+            <form class="popup__form" name="profile-information">
+                <h3 class="popup__text">Редактировать профиль</h3>
+                <fieldset class="popup__info">
+                    <input type="text" class="popup__input" placeholder="Ваше имя" value="" id="name" name="name" />
+                    <input type="text" class="popup__input" placeholder="О Вас" value="" id="job" name="bio" />
                 </fieldset>
-                <button class="popup-form__save-button" type="button">Сохранить</button>
+                <button class="popup__save-button" type="submit">Сохранить</button>
             </form>
         </div>
     </div>
     
-    <script src="./index.js"></script>
+    <script src="./scripts/index.js"></script>
 
 </body>
 
