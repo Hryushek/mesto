@@ -5,8 +5,15 @@
     flex-direction: row;
     color: white;
     font-family: 'Inter', sans-serif;
-    margin: auto;
+    margin: 0 auto;
 }
+
+@media screen and (max-width: 1023px) {
+    .profile {
+        max-width: 100%;
+        margin: 0 19px;
+    }
+} 
 
 @media screen and (max-width: 899px) {
     .profile {
