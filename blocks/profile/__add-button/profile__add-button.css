@@ -3,6 +3,7 @@
     height: 50px;
     border: 2px solid white;
     background-color: black;
+    outline: none;
     background-image: url(../../../images/Vector+.svg);
     background-repeat: no-repeat;
     background-position: center;
@@ -16,7 +17,7 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 649px) {
+@media screen and (max-width: 899px) {
     .profile__add-button {
         margin-left: 0;
         margin-top: 36px;

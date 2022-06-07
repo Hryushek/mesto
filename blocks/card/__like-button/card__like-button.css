@@ -2,12 +2,13 @@
     background-image: url(../../../images/like.svg);
     background-repeat: no-repeat;
     background-position: center;
-    background-color: white;
-    margin-right: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    margin-right: 20px;
     width: 22px;
     height: 19px;
     align-self: center;
-    border: none;
+    border: 0;
+    outline: none;
 }
 
 .card__like-button:hover {
