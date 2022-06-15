@@ -1,0 +1,11 @@
+.card__like-button_activated {
+    background-image: url("../../../../images/black_like.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 0;
+}
+
+.card__like-button_activated:hover {
+    opacity: .6;
+    cursor: pointer;
+}
