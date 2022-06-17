@@ -93,7 +93,7 @@ function deleteCard(event) {
     evtTarget.closest('.card').remove();
 }
 
-function showProfileFormValue() {
+function setProfileFormFieldsValues() {
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
 }
@@ -105,12 +105,12 @@ function saveProfileFormChages (evt) {
     closePopup(popupProfileForm);
 }
 
-function showEmptyPlaceForm() {
+function resetPlaceFormFieldsValues() {
     placeInput.value = '';
     placeImageInput.value = '';
 }
 
-function addCard(evt) {
+function handleAddCardSubmit(evt) {
     evt.preventDefault();
     cardContent = createCard(placeInput.value, placeImageInput.value);
     showCard(cardContent, elementsItem);
@@ -120,7 +120,7 @@ function addCard(evt) {
 
 editButton.addEventListener('click', () => {
     openPopup(popupProfileForm);
-    showProfileFormValue();
+    setProfileFormFieldsValues();
 });
 
 editCloseButton.addEventListener('click', () => {
@@ -131,7 +131,7 @@ popupProfileForm.addEventListener('submit', saveProfileFormChages);
 
 addButton.addEventListener('click', () => {
     openPopup(popupNewCard);
-    showEmptyPlaceForm();
+    resetPlaceFormFieldsValues();
 });
 
 popupNewCardClose.addEventListener('click', () => {
@@ -142,4 +142,4 @@ imageCloseButton.addEventListener('click', () => {
     closePopup(popupPhoto);
 });
 
-popupPlaceForm.addEventListener('submit', addCard);
+popupPlaceForm.addEventListener('submit', handleAddCardSubmit);
