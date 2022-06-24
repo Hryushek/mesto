@@ -1,8 +1,8 @@
 const editButton = document.querySelector('.profile__edit-button');
-const popupProfileForm = document.querySelector('.popup');
+const popupProfileForm = document.querySelector('#popup_profile-form');
 const editCloseButton = document.querySelector('.popup__close-button');
 const nameInput = document.querySelector('#name');
-const jobInput = document.querySelector('#job');
+const jobInput = document.querySelector('#bio');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__description');
 const elementsItem = document.querySelector('.elements__item');
@@ -10,7 +10,18 @@ const popupPhoto = document.querySelector('.popup_photo');
 const popupPhotoSrc = document.querySelector('.popup__image');
 const popupPhotoTitle = document.querySelector('.popup__description');
 const imageCloseButton = document.querySelector('.popup__close-button_photo');
+const placeInput = document.querySelector('#card-name');
+const placeImageInput = document.querySelector('#card-link');
+const popupNewCard = document.querySelector('#popup_new-card');
+const popupNewCardClose = document.querySelector('#new-card_close');
+const addButton = document.querySelector('.profile__add-button');
+const popupPlaceForm = document.querySelector('#new-card_form');
+const cardTemplate = document.querySelector('#card').content;
+const profileSaveButton = popupProfileForm.querySelector('.popup__save-button');
+const popupOverlayes = document.querySelectorAll('.popup');
+
 let cardContent = '';
+
 const initialCards = [
     {
         name: 'Архыз',
@@ -37,13 +48,12 @@ const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
-const placeInput = document.querySelector('#card-name');
-const placeImageInput = document.querySelector('#card-link');
-const popupNewCard = document.querySelector('#popup_new-card');
-const popupNewCardClose = document.querySelector('#new-card_close');
-const addButton = document.querySelector('.profile__add-button');
-const popupPlaceForm = document.querySelector('#new-card_form');
-const cardTemplate = document.querySelector('#card').content;
+
+const closePopupByEscape = (evt) => {
+    if (evt.key === 'Escape') {
+        closePopup(document.querySelector('.popup_opened'))
+    }
+}
 
 for (let i = 0; i < initialCards.length; i++) {
     cardContent = createCard(initialCards[i].name, initialCards[i].link);
@@ -75,14 +85,6 @@ function openCard(title, src) {
     popupPhotoSrc.alt = title;
 }
 
-function openPopup(element) {
-    element.classList.add('popup_opened');
-}
-
-function closePopup(element) {
-    element.classList.remove('popup_opened');
-}
-
 function likeCard(event) {
     const evtTarget = event.target;
     evtTarget.classList.toggle('card__like-button_activated');
@@ -93,12 +95,22 @@ function deleteCard(event) {
     evtTarget.closest('.card').remove();
 }
 
+function openPopup(element) {
+    element.classList.add('popup_opened');
+    document.addEventListener('keydown', closePopupByEscape);
+}
+
+function closePopup(element) {
+    element.classList.remove('popup_opened');
+    document.removeEventListener('keydown', closePopupByEscape);
+}
+
 function setProfileFormFieldsValues() {
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
 }
 
-function saveProfileFormChages (evt) {
+function saveProfileFormChanges (evt) {
     evt.preventDefault(); 
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
@@ -116,6 +128,8 @@ function handleAddCardSubmit(evt) {
     showCard(cardContent, elementsItem);
     closePopup(popupNewCard);
     popupPlaceForm.reset();
+    placeAddButton.classList.add('popup__button-submit_disabled');
+    placeAddButton.setAttribute('disabled', true);
 }
 
 editButton.addEventListener('click', () => {
@@ -127,7 +141,7 @@ editCloseButton.addEventListener('click', () => {
     closePopup(popupProfileForm);
 });
 
-popupProfileForm.addEventListener('submit', saveProfileFormChages);
+popupProfileForm.addEventListener('submit', saveProfileFormChanges);
 
 addButton.addEventListener('click', () => {
     openPopup(popupNewCard);
@@ -143,3 +157,10 @@ imageCloseButton.addEventListener('click', () => {
 });
 
 popupPlaceForm.addEventListener('submit', handleAddCardSubmit);
+
+popupOverlayes.forEach((popupElement) => popupElement.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('popup_opened')) {
+        closePopup(evt.target);
+    }
+}));
+

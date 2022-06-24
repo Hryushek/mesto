@@ -33,16 +33,22 @@
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
     
-    <div class="popup">
+    <div class="popup" id="popup_profile-form">
         <div class="popup__container">
             <button class="popup__close-button" type="button"></button>
-            <form class="popup__form" name="profile-information">
+            <form class="popup__form" name="profile-information" novalidate>
                 <h3 class="popup__text">Редактировать профиль</h3>
                 <fieldset class="popup__info">
-                    <input type="text" class="popup__input" placeholder="Ваше имя" value="" id="name" name="name" />
-                    <input type="text" class="popup__input" placeholder="О Вас" value="" id="job" name="bio" />
+                    <label class="popup__input-label">
+                        <input type="text" class="popup__input" placeholder="Ваше имя" value="" id="name" name="name" minlength="2" maxlength="40" required/>
+                        <span class="popup__input-error name-error"></span>
+                    </label>
+                    <label class="popup__input-label">
+                        <input type="text" class="popup__input" placeholder="О Вас" value="" id="bio" name="bio" minlength="2" maxlength="200" required/>
+                        <span class="popup__input-error bio-error"></span>
+                    </label>
                 </fieldset>
-                <button class="popup__save-button" type="submit">Сохранить</button>
+                <button class="popup__save-button" id="profileSaveButton" type="submit">Сохранить</button>
             </form>
         </div>
     </div>
@@ -58,13 +64,19 @@
     <div class="popup" id="popup_new-card">
             <div class="popup__container">
                 <button class="popup__close-button" id="new-card_close" type="button"></button>
-                <form class="popup__form" name="new-card_form" id="new-card_form">
+                <form class="popup__form" name="new-card_form" id="new-card_form" novalidate>
                     <h2 class="popup__text">Новое место</h2>
                     <fieldset class="popup__info">
-                        <input type="text" class="popup__input" placeholder="Название" id="card-name" name="card-name">
-                        <input type="url" class="popup__input" placeholder="Ссылка на картинку" id="card-link" name="card-link">
+                        <label class="popup__input-label">
+                            <input type="text" class="popup__input" placeholder="Название" id="card-name" name="card-name" minlength="2" maxlength="30" required>
+                            <span class="popup__input-error card-name-error"></span>
+                        </label>
+                        <label class="popup__input-label">
+                            <input type="url" class="popup__input" placeholder="Ссылка на картинку" id="card-link" name="card-link" required>
+                            <span class="popup__input-error card-link-error"></span>
+                        </label>
                     </fieldset>
-                    <button class="popup__save-button" type="submit">Создать</button>
+                    <button class="popup__save-button popup__save-button_inactive" id="addCardButton" type="submit">Создать</button>
                 </form>
             </div>
     </div>
@@ -82,6 +94,7 @@
     </template>
     
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
 
 </body>
 
