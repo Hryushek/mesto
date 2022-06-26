@@ -21,8 +21,6 @@ const profileSaveButton = popupProfileForm.querySelector('.popup__save-button');
 const popupOverlayes = document.querySelectorAll('.popup');
 const placeAddButton = popupPlaceForm.querySelector('.popup__save-button');
 
-let cardContent = '';
-
 const initialCards = [
     {
         name: 'Архыз',
@@ -58,7 +56,7 @@ const closePopupByEscape = (evt) => {
 
 for (let i = 0; i < initialCards.length; i++) {
     cardContent = createCard(initialCards[i].name, initialCards[i].link);
-    showCard(cardContent, elementsItem);
+    renderCard(cardContent, elementsItem);
 }
 
 function createCard(title, src) {
@@ -75,7 +73,7 @@ function createCard(title, src) {
     return card;
 }
 
-function showCard(card, container) {
+function renderCard(card, container) {
     container.prepend(card);
 }
 
@@ -118,19 +116,13 @@ function saveProfileFormChanges (evt) {
     closePopup(popupProfileForm);
 }
 
-function resetPlaceFormFieldsValues() {
-    placeInput.value = '';
-    placeImageInput.value = '';
-}
-
 function handleAddCardSubmit(evt) {
     evt.preventDefault();
     cardContent = createCard(placeInput.value, placeImageInput.value);
-    showCard(cardContent, elementsItem);
+    renderCard(cardContent, elementsItem);
     closePopup(popupNewCard);
     popupPlaceForm.reset();
-    placeAddButton.setAttribute('disabled', true);
-    placeAddButton.classList.add('popup__save-button_inactive');
+    disableSubmitButton(placeAddButton);
 }
 
 editButton.addEventListener('click', () => {
@@ -146,7 +138,6 @@ popupProfileForm.addEventListener('submit', saveProfileFormChanges);
 
 addButton.addEventListener('click', () => {
     openPopup(popupNewCard);
-    resetPlaceFormFieldsValues();
 });
 
 popupNewCardClose.addEventListener('click', () => {
