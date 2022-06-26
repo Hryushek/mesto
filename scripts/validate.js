@@ -69,4 +69,5 @@ const validation = {
       setEventListeners(formElement, validationElement);
     })
   };
+  
   enableValidation(validation);

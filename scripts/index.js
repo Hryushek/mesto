@@ -19,6 +19,7 @@ const popupPlaceForm = document.querySelector('#new-card_form');
 const cardTemplate = document.querySelector('#card').content;
 const profileSaveButton = popupProfileForm.querySelector('.popup__save-button');
 const popupOverlayes = document.querySelectorAll('.popup');
+const placeAddButton = popupPlaceForm.querySelector('.popup__save-button');
 
 let cardContent = '';
 
@@ -128,8 +129,8 @@ function handleAddCardSubmit(evt) {
     showCard(cardContent, elementsItem);
     closePopup(popupNewCard);
     popupPlaceForm.reset();
-    placeAddButton.classList.add('popup__button-submit_disabled');
     placeAddButton.setAttribute('disabled', true);
+    placeAddButton.classList.add('popup__save-button_inactive');
 }
 
 editButton.addEventListener('click', () => {
