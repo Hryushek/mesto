@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width initial-scale=1"> 
     <title>Место</title>
-    <link rel="stylesheet" type="text/css" href="./pages/index.css">
 </head>
 
 <body class="page">
@@ -36,7 +35,7 @@
     <div class="popup" id="popup_profile-form">
         <div class="popup__container">
             <button class="popup__close-button" type="button"></button>
-            <form class="popup__form" name="profile-information" novalidate>
+            <form class="popup__form" name="profile-information" id="profile_form" novalidate>
                 <h3 class="popup__text">Редактировать профиль</h3>
                 <fieldset class="popup__info">
                     <label class="popup__input-label">
@@ -92,10 +91,6 @@
             </div>
         </li>
     </template>
-    
-    <script type="module" src="./scripts/Card.js"></script>
-    <script type="module" src="./scripts/index.js"></script>
-    <script type="module" src="./scripts/FormValidator.js"></script>
 
 </body>
 
