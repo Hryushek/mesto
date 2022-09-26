@@ -8,12 +8,12 @@
 
 <body class="page">
     <header class="header">
-        <img src="./images/logo.svg" alt="логотип Место Россия" class="header__logo">
+        <img src="<%=require('./images/logo.svg')%>" alt="логотип Место Россия" class="header__logo">
     </header>
 
     <main>
     <section class="profile">
-        <img src="./images/Avatar.jpg" alt="аватар" class="profile__avatar">
+        <img src="<%=require('./images/Avatar.jpg')%>" alt="аватар" class="profile__avatar">
         <div class="profile__info">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
             <button class="profile__edit-button" type="button"></button>
@@ -82,9 +82,8 @@
 
     <template id="card">
         <li class="card">
-            <img src="./images/trash.svg" alt="корзина" class="card__thrash">
-            <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Архыз"
-                 class="card__photo">
+            <img src="<%=require('./images/trash.svg')%>" alt="корзина" class="card__thrash">
+            <img src="<%=require('./images/dombay.jpg')%>" alt="Архыз" class="card__photo">
             <div class="card__description">
                 <h2 class="card__name">Архыз</h2>
                 <button class="card__like-button" type="button"></button>
