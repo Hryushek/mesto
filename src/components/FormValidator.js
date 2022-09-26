@@ -22,6 +22,15 @@ export class FormValidator {
         });
     }
 
+    hideAllErrors() {
+        this._toggleButtonState(this._buttonElement);
+
+        this._inputList.forEach((input) => {
+           this._errorElement = this._form.querySelector(`.${input.id}-error`);
+           this._hideInputError(input);
+        })
+    }
+
     _checkInputValidity(inputElement) {
         if (!inputElement.validity.valid) {
             this._showInputError(inputElement);
