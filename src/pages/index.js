@@ -6,8 +6,6 @@ import {
     popupProfileForm,
     nameInput,
     jobInput,
-    profileName,
-    profileJob,
     elementsItem,
     popupPhoto,
     profileAddButton,
@@ -43,13 +41,8 @@ function openCard(title, src) {
     imagePopup.open(title, src)
 }
 
-function renderProfilePopupInputs() {
-    nameInput.value = profileName.textContent;
-    jobInput.value = profileJob.textContent;
-}
-
-function submitProfileForm(obj) {
-    info.setUserInfo(obj)
+function submitProfileForm(data) {
+    userInfo.setUserInfo(data)
 }
 
 function submitPlaceForm(obj) {
@@ -60,7 +53,9 @@ function submitPlaceForm(obj) {
 
 buttonEditProfile.addEventListener('click', () => {
     popupEdit.open();
-    renderProfilePopupInputs();
+    const userInfoProfile = userInfo.getUserInfo();
+    nameInput.value = userInfoProfile.name;
+    jobInput.value = userInfoProfile.bio;
     editFormValidation.hideAllErrors();
 });
 
@@ -79,9 +74,7 @@ const popupAdd = new PopupWithForm(popupNewCard, submitPlaceForm)
 popupAdd.setEventListeners();
 const popupEdit = new PopupWithForm(popupProfileForm, submitProfileForm)
 popupEdit.setEventListeners();
-const info = new UserInfo({
-    profileName: profileName,
-    profileJob: profileJob
-})
-
-console.log(popupAdd);
+const userInfo = new UserInfo({
+    titleSelector: '.profile__name',
+    subtitleSelector: '.profile__description',
+});
