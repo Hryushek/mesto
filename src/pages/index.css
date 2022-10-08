@@ -37,3 +37,5 @@
 @import url(../blocks/popup/__description/popup__description.css);
 @import url(../blocks/popup/__wrapper/popup__wrapper.css);
 @import url(../blocks/popup/__error/_visible/popup__error_visible.css);
+@import url(../blocks/popup/__text/_confirm/popup__text_confirm.css);
+@import url(../blocks/card/__like-counter/card__like-counter.css);

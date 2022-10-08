@@ -18,6 +18,13 @@ export const popupNewCardClose = document.querySelector('#new-card_close');
 export const profileAddButton = document.querySelector('.profile__add-button');
 export const popupPlaceForm = document.querySelector('#new-card_form');
 export const popupOverlayes = document.querySelectorAll('.popup');
+export const popupAvatar = document.querySelector('#popup_avatar');
+export const placeSubmitBtn = popupPlaceForm.querySelector('.popup__save-button');
+export const profileSubmitBtn = profileForm.querySelector('.popup__save-button');
+export const avatarButton = document.querySelector('.profile__avatar');
+export const avatarForm = document.querySelector('#avatar_form');
+export const popupConfirm = document.querySelector('#popup_confirm');
+
 
 export const initialCards = [
     {
@@ -53,4 +60,5 @@ export const validationConfig = {
     inactiveButtonClass: 'popup__save-button_inactive',
     inputErrorClass: 'popup__input_type_error',
     errorClass: 'popup__error_visible',
+    avatarSelector: '.profile__avatar-image', // добавить
 };
