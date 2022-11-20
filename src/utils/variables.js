@@ -2,11 +2,11 @@ export const profileForm = document.querySelector('#profile_form');
 export const buttonEditProfile = document.querySelector('.profile__edit-button');
 export const popupProfileForm = document.querySelector('#popup_profile-form');
 export const buttonEditClose = document.querySelector('.popup__close-button');
-export const nameInput = document.querySelector('#name');
+export const nameInput = document.querySelector('#fullName');
 export const jobInput = document.querySelector('#bio');
 export const profileName = document.querySelector('.profile__name');
 export const profileJob = document.querySelector('.profile__description');
-export const elementsItem = document.querySelector('.elements__item');
+export const cardItems = document.querySelector('.card__items');
 export const popupPhoto = document.querySelector('.popup_photo');
 export const popupPhotoSrc = document.querySelector('.popup__image');
 export const popupPhotoTitle = document.querySelector('.popup__description');
@@ -28,27 +28,27 @@ export const popupConfirm = document.querySelector('#popup_confirm');
 
 export const initialCards = [
     {
-        place: 'Архыз',
+        name: 'Архыз',
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
     },
     {
-        place: 'Челябинская область',
+        name: 'Челябинская область',
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
     },
     {
-        place: 'Иваново',
+        name: 'Иваново',
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
     },
     {
-        place: 'Камчатка',
+        name: 'Камчатка',
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
     },
     {
-        place: 'Холмогорский район',
+        name: 'Холмогорский район',
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
     },
     {
-        place: 'Байкал',
+        name: 'Байкал',
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
@@ -59,6 +59,6 @@ export const validationConfig = {
     submitButtonSelector: '.popup__save-button',
     inactiveButtonClass: 'popup__save-button_inactive',
     inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__error_visible',
-    avatarSelector: '.profile__avatar-image', // добавить
+    errorClass: 'popup__input-error_active',
+    avatarSelector: '.profile__avatar-image',
 };

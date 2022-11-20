@@ -1,4 +1,4 @@
-export class Api {
+class Api {
   constructor(data) {
       this._baseUrl = data.baseUrl;
       this._headers = data.headers;
@@ -26,7 +26,7 @@ export class Api {
           headers: this._headers,
           body: JSON.stringify({
               name: userInfo.fullName,
-              about: userInfo.workplace
+              about: userInfo.bio
           }),
       }).then(this._handleResponse)
   }
@@ -70,3 +70,5 @@ export class Api {
       }).then(this._handleResponse);
   }
 }
+
+export default Api

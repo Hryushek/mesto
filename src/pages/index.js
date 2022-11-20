@@ -6,13 +6,12 @@ import {
     popupProfileForm,
     nameInput,
     jobInput,
-    elementsItem,
+    cardItems,
     popupPhoto,
     profileAddButton,
     popupPlaceForm,
     profileForm,
     popupNewCard,
-    initialCards,
     validationConfig,
     popupConfirm,
     avatarButton, 
@@ -26,8 +25,8 @@ import Section from '../components/Section.js';
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
-import { Api } from "../components/Api.js";
-import { PopupConfirm } from "../components/PopupConfirm.js";
+import Api from "../components/Api.js";
+import PopupConfirm from "../components/PopupConfirm.js";
 import './index.css';
 
 let userId;
@@ -37,13 +36,13 @@ const cardsList = new Section({
         const card = createCard(data);
         cardsList.addItem(card)
     }
-}, elementsItem)
+}, cardItems)
 
+// this 
 function createCard(data) {
     const card = new Card(
         {
-            // изменено name на place
-            place: data.place,
+            name: data.name,
             link: data.link,
             likes: data.likes,
             userId,
@@ -81,6 +80,7 @@ function createCard(data) {
 const popupAdd = new PopupWithForm(popupNewCard, submitPlaceForm)
 popupAdd.setEventListeners();
 
+// this
 async function submitPlaceForm(data) {
     popupAdd.renderLoading(true, 'Сохранение...');
     try {
@@ -118,7 +118,6 @@ const userInfo = new UserInfo({
 async function submitProfileForm(data) {
     popupEdit.renderLoading(true, 'Сохранение...')
     try {
-        console.log(data)
         const res = await api.setUserInfo(data);
         userInfo.setUserInfo(res);
         popupEdit.close();
@@ -181,9 +180,9 @@ avatarFormValidation.enableValidaton();
 const imagePopup = new PopupWithImage(popupPhoto);
 imagePopup.setEventListeners();
 const api = new Api({
-    baseUrl: "https://mesto.nomoreparties.co/v1/cohort-42",
+    baseUrl: "https://mesto.nomoreparties.co/v1/cohort-51",
     headers: {
-        authorization: 'c56e30dc-2883-4270-a59e-b2f7bae969c6',
+        authorization: "6721996a-4046-4d45-b75c-afa8d7271524",
         "Content-Type": "application/json",
     },
 })

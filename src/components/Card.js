@@ -1,6 +1,6 @@
 export class Card {
     constructor(data, selector, openCard, like, dislike, deleteCard) {
-        this._title = data.place;
+        this._title = data.name;
         this._image = data.link;
         this._selector = selector;
         this._openCard = openCard;
@@ -16,7 +16,7 @@ export class Card {
     _getCard() {
         const cardTemplate = document.querySelector(this._selector)
             .content
-            .querySelector('.card')
+            .querySelector('.card__item')
             .cloneNode(true);
 
         return cardTemplate;
@@ -26,8 +26,8 @@ export class Card {
         this._element = this._getCard();
         this._imageElement = this._element.querySelector('.card__photo');
         this._imageElement.src = this._image;
-        this._element.querySelector('.card__name').textContent = this._title;
         this._imageElement.alt = this._title;
+        this._element.querySelector('.card__name').textContent = this._title;
         this._likeButton = this._element.querySelector('.card__like-button');
         this._likeCounter = this._element.querySelector('.card__like-counter');
         this._deleteButton = this._element.querySelector('.card__thrash');
@@ -35,7 +35,6 @@ export class Card {
         this._setEventListeners();
         this._isLiked();
         this.isOwner();
-
         return this._element;
     }
 
