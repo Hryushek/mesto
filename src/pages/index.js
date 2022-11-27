@@ -180,9 +180,9 @@ avatarFormValidation.enableValidaton();
 const imagePopup = new PopupWithImage(popupPhoto);
 imagePopup.setEventListeners();
 const api = new Api({
-    baseUrl: "https://mesto.nomoreparties.co/v1/cohort-51",
+    baseUrl: "https://mesto.nomoreparties.co/v1/cohort-54",
     headers: {
-        authorization: "6721996a-4046-4d45-b75c-afa8d7271524",
+        authorization: "82d74fdc-241c-43cf-a39d-e25bc264e6db",
         "Content-Type": "application/json",
     },
 })
