@@ -132,7 +132,6 @@ buttonEditProfile.addEventListener('click', () => {
     const info = userInfo.getUserInfo();
     popupEdit.setInputValue(info);
     popupEdit.open();
-    renderProfilePopupInputs();
     editFormValidation.hideAllErrors();
 });
 
@@ -159,11 +158,6 @@ avatarButton.addEventListener('click', () => {
 
 function openCard(title, src) {
     imagePopup.open(title, src)
-}
-
-function renderProfilePopupInputs() {
-    nameInput.value = profileName.textContent;
-    jobInput.value = profileJob.textContent;
 }
 
 profileAddButton.addEventListener('click', () => {
