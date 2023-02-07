@@ -7,11 +7,13 @@ You will see the prototype of social network where you can add and like pictures
 
 **Technologies:**
 * HTML + CSS;
-* Interactive with js;
+* Interactive with JS;
 * Grid;  
 * Flexbox;
 * Adaptive layout;   
 * Forms and validation;
+* Object-oriented programming;
+* Webpack;
 * BEM nested methodology.
 
 [See the project](https://hryushek.github.io/mesto/)
