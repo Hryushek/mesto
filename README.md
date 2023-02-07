@@ -1,12 +1,19 @@
-# Проект: Место
+# Mesto
 
-### Обзор
+**Intro**
 
-* Это проект, в котором можно добавлять и оценивать фотографии из разных красивых мест. 
-* В проекте реализованы технологии grid, адаптивная верстка, реализовано pop-up окно при помощи js.
+This is my third learning project for Yandex Practicum.  
+You will see the prototype of social network where you can add and like pictures from different beautiful places.
 
-**Ссылка**
+**Technologies:**
+* HTML + CSS;
+* Interactive with js;
+* Grid;  
+* Flexbox;
+* Adaptive layout;   
+* Forms and validation;
+* BEM nested methodology.
 
-* [Ссылка на проект](https://hryushek.github.io/mesto/)
+[See the project](https://hryushek.github.io/mesto/)
 
 Enjoy!
